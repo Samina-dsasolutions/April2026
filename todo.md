@@ -1,1 +1,23 @@
-Phase 1: Project Setup & Initialization[ ] Initialize Spring Boot Project: Use Spring Initializr to bootstrap the application with Maven and Java 17/21.[ ] Define Project Metadata: Set Group as com.codingshuttle and Artifact as introductionToSpringBoot.[ ] Add Core Dependencies: Include spring-boot-starter-web for REST APIs and spring-boot-starter-test for unit testing.[ ] Setup IDE: Import the pom.xml into IntelliJ IDEA and ensure all Maven dependencies are indexed.Phase 2: Refactoring for Loose Coupling (DI & IoC)[ ] Define Interfaces: Create interfaces for core services (e.g., PaymentService, DB) to allow for flexible implementations.[ ] Register Beans: Use the @Component annotation on your service classes to let the Spring IoC container manage their lifecycles.[ ] Implement Dependency Injection:[ ] Transition from manual new keyword instantiation to @Autowired field injection for quick prototyping.[ ] Recommended: Refactor to Constructor Injection to ensure classes are never in an incomplete state and to facilitate easier testing.[ ] Resolve Ambiguities: Use @Primary for default implementations and @Qualifier when you need to specify a exact bean by name.Phase 3: Configuration & Lifecycle Management[ ] External Configuration: Use application.properties to manage environment-specific settings like server ports.[ ] Manage Third-Party Beans: Create a @Configuration class with @Bean methods for libraries you don't own (e.g., ModelMapper).[ ] Implement Lifecycle Hooks:[ ] Use @PostConstruct for initialization logic that requires injected dependencies.[ ] Use @PreDestroy for cleanup tasks like closing database connections.Phase 4: Feature Development & Testing[ ] Develop REST Endpoints: Use @RestController and @GetMapping to handle web requests.[ ] Implement Advanced Filtering: Create a search endpoint in your controller using optional @RequestParam and Pageable for scalable pagination.[ ] Unit Testing: Write tests in src/test/java to verify service logic using mocked dependencies.Progress TrackerMilestoneStatusTarget DateProject Bootstrapping⚪ Not StartedTBDIoC & Bean Management⚪ Not StartedTBDDependency Injection⚪ Not StartedTBDREST API Development⚪ Not StartedTBDTesting & Final Review⚪ Not StartedTBD
+# Project Roadmap & Tracker
+
+## Phase 1: Project Setup
+- [x] Initialize Spring Boot Project (Java 17/21)
+- [ ] Define Project Metadata (`com.codingshuttle`)
+- [ ] Add `spring-boot-starter-web` and `test` dependencies
+
+## Phase 2: Dependency Injection & IoC
+- [ ] Create `PaymentService` and `DB` interfaces
+- [ ] Annotate services with `@Component`
+- [ ] Refactor `OrderService` to use **Constructor Injection**
+- [ ] Use `@Primary` or `@Qualifier` for bean resolution
+
+## Phase 3: Configuration & Lifecycle
+- [ ] Setup `application.properties`
+- [ ] Create `@Configuration` class for third-party beans (e.g., ModelMapper)
+- [ ] Implement `@PostConstruct` and `@PreDestroy` hooks
+
+## Phase 4: REST API & Advanced Features
+- [ ] Create `ListingController` with `@RestController`
+- [ ] Implement search endpoint with optional `@RequestParam`
+- [ ] Add Pagination support using `Pageable` and `Page<T>`
+- [ ] Write unit tests for service logic
